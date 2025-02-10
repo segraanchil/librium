@@ -1,0 +1,117 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden; /* Prevent scrolling */
+    background: #000;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Keep lyrics with text background effect */
+p:not(.letter-text) {
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: justify;
+    background: url(jajapingit.jpg) no-repeat center;
+    background-size: contain;
+    background-attachment: fixed;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: rgba(225, 225, 255, 0);
+    background-clip: text;
+    color: transparent;
+    max-width: 90%;
+    max-height: 90%;
+    overflow: hidden;
+}
+
+/* Solid black cursive text for the letter inside the modal */
+.letter-text {
+    font-family: 'Dancing Script', cursive; /* Use imported Google Font */
+    color: black !important;
+    background: none !important; /* Remove any background clipping */
+    -webkit-background-clip: unset !important;
+    -webkit-text-fill-color: black !important;
+}
+
+/* Ensure modal text remains visible */
+.modal-content {
+    background-color: #fefefe;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    font-family: 'Dancing Script', cursive; /* Apply cursive font */
+    color: black; /* Default text color */
+}
+
+
+
+button#openLetterBtn {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    font-family: cursive; /* Set font face to cursive */
+    color: black; /* Set font color to black */
+}
+
+.letter-text {
+    color: black; /* Ensure text is solid black */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    p {
+        font-size: 0.875rem; /* Adjust font size for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    p {
+        font-size: 0.75rem; /* Further adjust font size for very small screens */
+    }
+}
